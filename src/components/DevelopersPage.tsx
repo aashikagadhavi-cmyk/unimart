@@ -157,6 +157,25 @@ speech = eunimart.vocal.synthesize(
         </p>
       </div>
 
+      {/* Dev IDE Mockup Imagery */}
+      <div className="border border-slate-850 bg-[#090d16] rounded-3xl overflow-hidden relative h-56 sm:h-72 shadow-2xl flex items-end group select-none" id="dev-workspace-illustration">
+        <img 
+          src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&h=400&q=80" 
+          alt="Eunimart IDE and Development environment" 
+          className="w-full h-full object-cover opacity-50 transition-all duration-700 group-hover:scale-[1.02] group-hover:opacity-65"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent flex flex-col justify-end p-6 space-y-1">
+          <span className="text-[9px] font-mono text-indigo-400 bg-slate-950/90 border border-slate-800 p-0.5 px-3 rounded font-bold w-max uppercase tracking-wider">
+            Active SDK Toolchain
+          </span>
+          <h3 className="text-lg font-bold text-white uppercase font-display tracking-wide">Multi-Platform Terminal Hub</h3>
+          <p className="text-xs text-slate-400 font-sans max-w-xl">
+            Stream high-fidelity video buffers directly to frontend client states using standard Node / Python pip protocols. Integrated WebSocket listeners automatically trigger post-production callback logs.
+          </p>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* API Credentials Card & Active Testing panel */}
         <div className="lg:col-span-4 space-y-6">
@@ -309,6 +328,65 @@ speech = eunimart.vocal.synthesize(
                   )}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Integration & Infrastructure Services Developer Showcase (3 supplementary images) */}
+      <div className="border border-slate-850 bg-[#090d16] rounded-3xl p-6 sm:p-8 space-y-6" id="dev-additional-showcase">
+        <div>
+          <span className="text-[9px] font-mono text-purple-400 tracking-wider uppercase font-bold block">
+            Eunimart Global Devops Coordinates
+          </span>
+          <h3 className="text-base sm:text-lg font-bold font-display text-white uppercase tracking-tight">
+            Integrated Host Node & Telemetry telemetry
+          </h3>
+          <p className="text-xs text-slate-400 leading-relaxed font-sans max-w-2xl mt-1">
+            Build server requests using the latest gRPC, Python pip, or Javascript packages directly. Our microservice layers guarantee 99.98% operational SLA availability thresholds.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="border border-slate-800 rounded-2xl overflow-hidden relative group h-44 bg-slate-950">
+            <img 
+              src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="Cluster Load Balancing" 
+              className="w-full h-full object-cover opacity-50 group-hover:opacity-75 transition-opacity duration-500"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+              <span className="text-[8px] font-mono text-indigo-400 font-bold uppercase tracking-wider block">MODULE I: BALANCER</span>
+              <strong className="text-xs text-white uppercase font-display block mt-0.5">Dual-Channel Stream Routers</strong>
+              <p className="text-[10px] text-slate-405 leading-tight mt-1 font-sans">Streams real-time coordinates cleanly into client socket buffers.</p>
+            </div>
+          </div>
+
+          <div className="border border-slate-800 rounded-2xl overflow-hidden relative group h-44 bg-slate-950">
+            <img 
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="Silicon Microprocessing Cores" 
+              className="w-full h-full object-cover opacity-50 group-hover:opacity-75 transition-opacity duration-500"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+              <span className="text-[8px] font-mono text-[#22d3ee] font-bold uppercase tracking-wider block">MODULE II: CHIPSETS</span>
+              <strong className="text-xs text-white uppercase font-display block mt-0.5">High-Performance H100 Enclave</strong>
+              <p className="text-[10px] text-slate-405 leading-tight mt-1 font-sans">Physical tensor calculation layers processing spatial facial coordinates.</p>
+            </div>
+          </div>
+
+          <div className="border border-slate-800 rounded-2xl overflow-hidden relative group h-44 bg-slate-950">
+            <img 
+              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="Live Client Telemetry logs" 
+              className="w-full h-full object-cover opacity-50 group-hover:opacity-75 transition-opacity duration-500"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+              <span className="text-[8px] font-mono text-purple-400 font-bold uppercase tracking-wider block">MODULE III: DEBUGGER</span>
+              <strong className="text-xs text-white uppercase font-display block mt-0.5">Active Client Sandbox Terminal</strong>
+              <p className="text-[10px] text-slate-405 leading-tight mt-1 font-sans">Secure webhook logs tracing remote rendering pipeline status checks.</p>
             </div>
           </div>
         </div>

@@ -465,6 +465,33 @@ const promoMaterials = await eunimart.contentGenerator.buildCampaign({
               <p className="text-xs text-slate-400 font-sans italic">{activeDoc.tagline}</p>
             </div>
 
+            {/* Elegant Tech Representative Section Visual */}
+            <div className="border border-slate-850 rounded-2xl overflow-hidden relative h-48 bg-slate-950 group">
+              <img 
+                src={
+                  activeTab === "video-engine"
+                    ? "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80"
+                    : activeTab === "voice-engine"
+                    ? "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=800&q=80"
+                    : activeTab === "generative-ai"
+                    ? "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+                    : activeTab === "video-editor"
+                    ? "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
+                    : activeTab === "language-dubbing"
+                    ? "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"
+                    : "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                }
+                alt={activeDoc.title}
+                className="w-full h-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex items-end p-4">
+                <span className="text-[9px] font-mono text-cyan-400 bg-slate-950/90 border border-slate-850 px-3 py-1 rounded font-bold uppercase tracking-wider">
+                  {activeDoc.title} Active Preview
+                </span>
+              </div>
+            </div>
+
             {/* Quick Metrics display */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {activeDoc.techMetrics.map((met, i) => (

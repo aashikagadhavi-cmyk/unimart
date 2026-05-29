@@ -212,6 +212,75 @@ export const ContactPage: React.FC = () => {
           </form>
         </div>
       </div>
+
+      {/* Modern Headquarters Operations Showcase: 4 distinct high-fidelity images */}
+      <div className="border border-slate-850 bg-[#090d16] rounded-3xl p-6 sm:p-8 space-y-6" id="contact-workspace-galleries">
+        <div>
+          <span className="text-[10px] font-mono text-cyan-400 tracking-wider uppercase font-bold">
+            Mumbai Operations & Hardware Presence
+          </span>
+          <h3 className="text-xl font-bold font-display text-white uppercase tracking-tight mt-1">
+            Goregaon Laboratory & Server Cages
+          </h3>
+          <p className="text-xs text-slate-400 leading-relaxed max-w-2xl mt-1">
+            Our physical presence bridges custom high-density AI clusters with state-of-the-art client executive facilities natively inside Maharashtra.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="border border-slate-800 rounded-2xl overflow-hidden relative group h-40">
+            <img 
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="Eunimart Mumbai Lobby Hall" 
+              className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-3">
+              <span className="text-[8px] font-mono text-cyan-400 font-bold uppercase tracking-wider">Coordinates: BOM-FOYER</span>
+              <span className="text-[10px] font-bold text-white font-display uppercase tracking-tight">Main Lobby &amp; Workspace</span>
+            </div>
+          </div>
+
+          <div className="border border-slate-800 rounded-2xl overflow-hidden relative group h-40">
+            <img 
+              src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="Mumbai Server Cages BOM-H100" 
+              className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-3">
+              <span className="text-[8px] font-mono text-indigo-400 font-bold uppercase tracking-wider">Coordinates: BOM-RACK-04</span>
+              <span className="text-[10px] font-bold text-white font-display uppercase tracking-tight">Sovereign GPU Node Enclave</span>
+            </div>
+          </div>
+
+          <div className="border border-slate-800 rounded-2xl overflow-hidden relative group h-40">
+            <img 
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="Direct Engineering Workspace" 
+              className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-3">
+              <span className="text-[8px] font-mono text-purple-400 font-bold uppercase tracking-wider">Coordinates: BOM-LAB-01</span>
+              <span className="text-[10px] font-bold text-white font-display uppercase tracking-tight">Vocal Mesh Dev Core</span>
+            </div>
+          </div>
+
+          <div className="border border-slate-800 rounded-2xl overflow-hidden relative group h-40">
+            <img 
+              src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="Elite Consultation Board Room" 
+              className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-3">
+              <span className="text-[8px] font-mono text-blue-400 font-bold uppercase tracking-wider">Coordinates: BOM-CONF-ST</span>
+              <span className="text-[10px] font-bold text-white font-display uppercase tracking-tight">Executive Briefing Suites</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

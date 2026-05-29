@@ -185,6 +185,79 @@ export const SolutionsPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Production Solutions Portfolios Showcase (4 static high-fidelity images) */}
+      <div className="border border-slate-850 bg-[#090d16] rounded-3xl p-6 sm:p-8 space-y-6" id="solutions-portfolios-gallery">
+        <div>
+          <span className="text-[10px] font-mono text-indigo-400 tracking-wider uppercase font-bold">
+            Eunimart Global Portfolios Showcase
+          </span>
+          <h3 className="text-xl font-bold font-display text-white uppercase tracking-tight mt-1">
+            Active Enterprise Deployments Registry
+          </h3>
+          <p className="text-xs text-slate-405 leading-relaxed max-w-2xl mt-1">
+            Explore photographic records from physical partner installations utilizing closed Eunimart VidGen models.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="border border-slate-800 rounded-2xl bg-slate-950 overflow-hidden relative group h-48">
+            <img 
+              src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="Film Studios Deployment" 
+              className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+              <span className="text-[8px] font-mono text-blue-400 font-black uppercase">CASE: FILM-BOM-002</span>
+              <strong className="text-xs text-white uppercase font-display select-none">Epic Narrative Synthesis</strong>
+              <p className="text-[10px] text-slate-400 font-sans leading-tight mt-1">Accelerated sequence renderings inside elite digital studio rigs.</p>
+            </div>
+          </div>
+
+          <div className="border border-slate-800 rounded-2xl bg-slate-950 overflow-hidden relative group h-48">
+            <img 
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="Marketing Brands Deployment" 
+              className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+              <span className="text-[8px] font-mono text-purple-400 font-black uppercase">CASE: MKTG-BNR-502</span>
+              <strong className="text-xs text-white uppercase font-display select-none">Localized Multi-Channel</strong>
+              <p className="text-[10px] text-slate-400 font-sans leading-tight mt-1">Drafting variant dynamic product video ads on-demand.</p>
+            </div>
+          </div>
+
+          <div className="border border-slate-800 rounded-2xl bg-slate-950 overflow-hidden relative group h-48">
+            <img 
+              src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="E-Learning Deployment" 
+              className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-4">
+              <span className="text-[8px] font-mono text-cyan-400 font-black uppercase">CASE: DUBB-VOC-305</span>
+              <strong className="text-xs text-white uppercase font-display select-none">Interactive Dialect Mapping</strong>
+              <p className="text-[10px] text-slate-400 font-sans leading-tight mt-1">Phonetic sound translations to fit native regional accents.</p>
+            </div>
+          </div>
+
+          <div className="border border-slate-800 rounded-2xl bg-slate-950 overflow-hidden relative group h-48">
+            <img 
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&h=300&q=80" 
+              alt="Global Localization Deployment" 
+              className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-4">
+              <span className="text-[8px] font-mono text-[#22d3ee] font-black uppercase">CASE: EDU-COUR-104</span>
+              <strong className="text-xs text-white uppercase font-display select-none">Autonomous Presenter</strong>
+              <p className="text-[10px] text-slate-400 font-sans leading-tight mt-1">Simulating visual avatars reciting core curriculum topics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -15,6 +15,8 @@ import { TechnologyPage } from "./components/TechnologyPage";
 import { DevelopersPage } from "./components/DevelopersPage";
 import { PricingPage } from "./components/PricingPage";
 import { ContactPage } from "./components/ContactPage";
+import { CustomCursor } from "./components/CustomCursor";
+import { FloatingChatSupport } from "./components/FloatingChatSupport";
 import { INDUSTRIES, TESTIMONIALS, CASE_STUDIES, BLOG_POSTS, MILESTONES, FAQ_ITEMS } from "./data";
 
 export default function App() {
@@ -110,6 +112,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#070b13] text-slate-100 font-sans selection:bg-purple-600/30 selection:text-white" id="main-master-wrapper">
+      <CustomCursor />
+      <FloatingChatSupport />
       
       {/* 1. Brand Header */}
       <Header 

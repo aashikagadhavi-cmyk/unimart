@@ -16,6 +16,7 @@ export const PricingPage: React.FC = () => {
       name: "Creator Studio",
       monthlyPrice: 249,
       badge: "Indie standard",
+      imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=500&h=250&q=80",
       description: "Perfect for single storytellers scaling outline storyboard concepts.",
       features: [
         "Up to 500 compilation render minutes",
@@ -30,6 +31,7 @@ export const PricingPage: React.FC = () => {
       name: "Studio Peak",
       monthlyPrice: 1150,
       badge: "Most popular",
+      imageUrl: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=500&h=250&q=80",
       description: "Engineered for agency marketing teams and independent dubbing houses.",
       features: [
         "Unlimited rendering minutes",
@@ -45,6 +47,7 @@ export const PricingPage: React.FC = () => {
       name: "Sovereign Enterprise",
       monthlyPrice: "Custom",
       badge: "Air-gapped nodes",
+      imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=500&h=250&q=80",
       description: "Dedicated isolated local GPU clusters serving global media studios.",
       features: [
         "Closed air-gapped server configurations",
@@ -109,6 +112,36 @@ export const PricingPage: React.FC = () => {
         </div>
       </div>
 
+      {/* Sovereign Infrastructure Quick Feature Card */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#090d16] border border-slate-850 rounded-3xl p-6 sm:p-8 relative overflow-hidden" id="pricing-infrastructure-banner">
+        <div className="lg:col-span-8 space-y-4">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            <span className="text-[10px] font-mono font-bold text-blue-400 uppercase tracking-widest">Enterprise Bare-Metal Storage</span>
+          </div>
+          <h3 className="text-xl font-bold font-display text-white uppercase tracking-tight">Mumbai Sovereign GPU Micro-Grid Array</h3>
+          <p className="text-xs text-slate-400 leading-relaxed font-sans max-w-2xl">
+            We operate fully secure physical server arrays located directly inside Goregaon West, Mumbai. Every video synthesis computation executes on high-performance H100 cores, guaranteeing low latency, high uptime, and zero shared public cloud vectors.
+          </p>
+          <div className="flex flex-wrap gap-4 text-[10px] font-mono text-slate-500">
+            <span>● 54 Keyframe temporal consistency loops</span>
+            <span><span>● AES-256 air-gapped session encryption</span></span>
+            <span>● Multi-node priority failover</span>
+          </div>
+        </div>
+        <div className="lg:col-span-4 h-40 rounded-2xl overflow-hidden border border-slate-850 relative group">
+          <img 
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&h=300&q=80" 
+            alt="Physical Mumbai GPU hardware servers" 
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent flex items-end p-3">
+            <span className="text-[8px] font-mono text-emerald-400 font-extrabold uppercase">BOM-1 Datacenter Cage</span>
+          </div>
+        </div>
+      </div>
+
       {/* Plans comparison cards display */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {plans.map((p, idx) => (
@@ -141,6 +174,21 @@ export const PricingPage: React.FC = () => {
               </div>
 
               <div>
+                {p.imageUrl && (
+                  <div className="h-32 w-full rounded-2xl overflow-hidden border border-slate-850 bg-slate-950 relative mb-4 group">
+                    <img 
+                      src={p.imageUrl} 
+                      alt={p.name} 
+                      className="w-full h-full object-cover opacity-85 transition-transform duration-500 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent flex items-end p-2.5">
+                      <span className="text-[8px] font-mono tracking-widest text-[#22d3ee] uppercase font-bold">
+                        Model Output Showcase
+                      </span>
+                    </div>
+                  </div>
+                )}
                 <h3 className="text-xl font-bold text-white uppercase font-mono">{p.name}</h3>
                 <p className="text-xs text-slate-450 leading-relaxed mt-2 font-sans min-h-[40px]">{p.description}</p>
               </div>

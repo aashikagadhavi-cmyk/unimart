@@ -65,6 +65,25 @@ export const AboutPage: React.FC = () => {
         </div>
       </div>
 
+      {/* Cinematic Studio Workspace Showcase */}
+      <div className="border border-slate-850 bg-[#090d16] rounded-3xl overflow-hidden relative h-72 sm:h-96 shadow-2xl flex items-end group select-none" id="about-workspace-hero">
+        <img 
+          src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&h=500&q=80" 
+          alt="Eunimart Production Workspace" 
+          className="w-full h-full object-cover opacity-50 transition-all duration-700 group-hover:scale-[1.02] group-hover:opacity-75"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent flex flex-col justify-end p-6 sm:p-10 space-y-2">
+          <span className="text-[10px] font-mono text-cyan-400 bg-slate-950/90 border border-slate-800 p-1 px-3.5 rounded-full font-bold w-max uppercase tracking-widest">
+            Behind the Scenes
+          </span>
+          <h3 className="text-xl sm:text-3xl font-black text-white uppercase font-display tracking-tight">Active Computational Studio Workspace</h3>
+          <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-sans max-w-2xl">
+            Our teams align creative spatial direction with rigorous tensor-flow mathematical parameters inside our flagship labs, helping directors compile draft footage drafts in minutes instead of weeks.
+          </p>
+        </div>
+      </div>
+
       {/* Leadership Spotlight & Vision Statement Quote */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-slate-900/20 border border-slate-850 rounded-3xl p-6 md:p-10 relative overflow-hidden">
         <div className="absolute top-[-20%] right-[-10%] w-72 h-72 bg-gradient-to-br from-blue-500/10 to-purple-650/5 rounded-full blur-[80px] pointer-events-none"></div>
@@ -137,7 +156,15 @@ export const AboutPage: React.FC = () => {
 
       {/* Core Values / Competency Matrix */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
-        <div className="bg-[#080c14] border border-slate-800/80 p-6 rounded-3xl space-y-3">
+        <div className="bg-[#080c14] border border-slate-800/80 p-6 rounded-3xl space-y-3 overflow-hidden group">
+          <div className="h-32 w-full rounded-2xl overflow-hidden border border-slate-850 bg-slate-950 relative mb-2">
+            <img 
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&h=200&q=80" 
+              alt="Cinematic Geometrics" 
+              className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+              referrerPolicy="no-referrer"
+            />
+          </div>
           <div className="flex items-center gap-2 text-blue-400 font-mono text-xs font-bold uppercase">
             <Sparkles className="w-4 h-4" />
             01. Cinematic Geometrics
@@ -147,7 +174,15 @@ export const AboutPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-[#080c14] border border-slate-800/80 p-6 rounded-3xl space-y-3">
+        <div className="bg-[#080c14] border border-slate-800/80 p-6 rounded-3xl space-y-3 overflow-hidden group">
+          <div className="h-32 w-full rounded-2xl overflow-hidden border border-slate-850 bg-slate-950 relative mb-2">
+            <img 
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&h=200&q=80" 
+              alt="Secure Local Encapsulation" 
+              className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+              referrerPolicy="no-referrer"
+            />
+          </div>
           <div className="flex items-center gap-2 text-purple-400 font-mono text-xs font-bold uppercase">
             <ShieldCheck className="w-4 h-4" />
             02. Secure Local Encapsulation
@@ -157,7 +192,15 @@ export const AboutPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-[#080c14] border border-slate-800/80 p-6 rounded-3xl space-y-3">
+        <div className="bg-[#080c14] border border-slate-800/80 p-6 rounded-3xl space-y-3 overflow-hidden group">
+          <div className="h-32 w-full rounded-2xl overflow-hidden border border-slate-850 bg-slate-950 relative mb-2">
+            <img 
+              src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=400&h=200&q=80" 
+              alt="Multi-Lingual Phonics" 
+              className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+              referrerPolicy="no-referrer"
+            />
+          </div>
           <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase">
             <Globe className="w-4 h-4" />
             03. Multi-Lingual Phonics

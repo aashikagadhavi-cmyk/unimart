@@ -170,6 +170,65 @@ export const TechnologyPage: React.FC = () => {
         </div>
       </div>
 
+      {/* Visual Infrastructure Showcase */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="tech-infrastructure-gallery">
+        <div className="border border-slate-850 bg-[#090d16] overflow-hidden rounded-2xl group relative h-64">
+          <img 
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" 
+            alt="Multi-node GPU Cluster System" 
+            className="w-full h-full object-cover opacity-60 transition-all duration-500 group-hover:scale-105 group-hover:opacity-80" 
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-5">
+            <span className="text-[9px] font-mono text-blue-400 uppercase tracking-widest font-bold">Node Array B-01</span>
+            <h4 className="text-sm font-bold text-white uppercase mt-1">High-Throughput H100 GPU Farm</h4>
+            <p className="text-[11px] text-slate-400 mt-1 font-sans">Distributed compute coordination powering real-time 4K cinematic temporal diffusion passes.</p>
+          </div>
+        </div>
+
+        <div className="border border-slate-850 bg-[#090d16] overflow-hidden rounded-2xl group relative h-64">
+          <img 
+            src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=600&q=80" 
+            alt="Phonetic acoustic mapping neural network" 
+            className="w-full h-full object-cover opacity-60 transition-all duration-500 group-hover:scale-105 group-hover:opacity-80" 
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-5">
+            <span className="text-[9px] font-mono text-purple-400 uppercase tracking-widest font-bold">Vector Acoustics</span>
+            <h4 className="text-sm font-bold text-white uppercase mt-1">Phoneme Vector Trajectories</h4>
+            <p className="text-[11px] text-slate-400 mt-1 font-sans">Synthesizers mapping raw audio streams onto lip mesh contractions perfectly in sub-100ms.</p>
+          </div>
+        </div>
+
+        <div className="border border-slate-850 bg-[#090d16] overflow-hidden rounded-2xl group relative h-64">
+          <img 
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" 
+            alt="Secure air-gapped server cage in Mumbai" 
+            className="w-full h-full object-cover opacity-60 transition-all duration-500 group-hover:scale-105 group-hover:opacity-80" 
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-5">
+            <span className="text-[9px] font-mono text-cyan-400 uppercase tracking-widest font-bold">Secure Enclave</span>
+            <h4 className="text-sm font-bold text-white uppercase mt-1">Sovereign Air-Gapped Vault</h4>
+            <p className="text-[11px] text-slate-400 mt-1 font-sans">Strict isolated on-premises infrastructure protecting critical narrative IP & company databases.</p>
+          </div>
+        </div>
+
+        <div className="border border-slate-850 bg-[#090d16] overflow-hidden rounded-2xl group relative h-64">
+          <img 
+            src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80" 
+            alt="Tensor weights calibration" 
+            className="w-full h-full object-cover opacity-60 transition-all duration-500 group-hover:scale-105 group-hover:opacity-80" 
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-5">
+            <span className="text-[9px] font-mono text-emerald-400 uppercase tracking-widest font-bold">Math Weights</span>
+            <h4 className="text-sm font-bold text-white uppercase mt-1">CFG Scale Calibrator</h4>
+            <p className="text-[11px] text-slate-400 mt-1 font-sans">Deep visual calibration grids checking voxel degradation curves across training parameters.</p>
+          </div>
+        </div>
+      </div>
+
       {/* Compliance / Security Badges Footer Section */}
       <div className="bg-gradient-to-r from-blue-950/10 via-slate-900/40 to-transparent p-6 sm:p-8 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-center gap-6 justify-between select-none">
         <div className="space-y-2 text-center md:text-left">
