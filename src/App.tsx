@@ -789,23 +789,42 @@ export default function App() {
               {BLOG_POSTS.map((post) => (
                 <div 
                   key={post.id}
-                  className="bg-slate-900/10 border border-slate-850 p-6 rounded-2xl flex flex-col justify-between hover:border-slate-700 transition-colors"
+                  className="bg-slate-900/10 border border-slate-850 rounded-2xl flex flex-col justify-between hover:border-slate-700 transition-all duration-300 group overflow-hidden"
                   id={`blog-${post.id}`}
                 >
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center text-[10px] text-slate-550 font-mono">
-                      <span>{post.category}</span>
-                      <span>{post.date}</span>
-                    </div>
+                  <div>
+                    {/* Blog Card Widescreen Cover */}
+                    {post.imageUrl && (
+                      <div className="h-40 overflow-hidden relative border-b border-slate-850 bg-slate-950">
+                        <img 
+                          src={post.imageUrl} 
+                          alt={post.title} 
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute top-2.5 left-2.5 bg-slate-950/90 border border-slate-800 text-[9px] font-mono font-extrabold text-cyan-400 px-2 py-0.5 rounded uppercase tracking-wider">
+                          {post.category}
+                        </div>
+                      </div>
+                    )}
 
-                    <h4 className="text-sm font-extrabold text-white leading-snug">{post.title}</h4>
-                    <p className="text-xs text-slate-455 leading-relaxed">{post.summary}</p>
+                    <div className="p-6 space-y-3">
+                      <div className="flex justify-between items-center text-[10px] text-slate-500 font-mono">
+                        <span>{post.readTime || "Research Entry"}</span>
+                        <span>{post.date}</span>
+                      </div>
+
+                      <h4 className="text-sm font-extrabold text-white leading-snug group-hover:text-blue-400 transition-colors">{post.title}</h4>
+                      <p className="text-xs text-slate-400 leading-relaxed">{post.summary}</p>
+                    </div>
                   </div>
 
-                  <p className="text-[10px] text-blue-400 font-mono font-bold uppercase mt-5 pt-3 border-t border-slate-850 flex items-center gap-1 hover:underline cursor-pointer">
-                    Read Report Brief
-                    <Icons.ExternalLink className="w-3 h-3" />
-                  </p>
+                  <div className="px-6 pb-6 pt-1">
+                    <p className="text-[10px] text-blue-400 font-mono font-bold uppercase pt-3 border-t border-slate-850/60 flex items-center gap-1 hover:underline cursor-pointer">
+                      Read Report Brief
+                      <Icons.ExternalLink className="w-3 h-3" />
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

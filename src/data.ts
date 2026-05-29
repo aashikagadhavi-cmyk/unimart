@@ -304,7 +304,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Diffusion Physics",
     readTime: "5 min read",
     date: "May 25, 2026",
-    summary: "How Eunimart's proprietary temporal seed stabilizers guarantee that actors, outfits, and lighting persist across complex multi-minute camera tracks."
+    summary: "How Eunimart's proprietary temporal seed stabilizers guarantee that actors, outfits, and lighting persist across complex multi-minute camera tracks.",
+    imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&h=350&q=80"
   },
   {
     id: "blog-2",
@@ -312,7 +313,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Lip-Sync Engineering",
     readTime: "7 min read",
     date: "April 18, 2026",
-    summary: "Deep-dive into micro-vocal phonetic coordinates, mesh distortion math, and visual boundaries that lock facial rig structures securely."
+    summary: "Deep-dive into micro-vocal phonetic coordinates, mesh distortion math, and visual boundaries that lock facial rig structures securely.",
+    imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&h=350&q=80"
   },
   {
     id: "blog-3",
@@ -320,7 +322,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Data Security",
     readTime: "4 min read",
     date: "March 12, 2026",
-    summary: "Transitioning away from public consumer video generations towards closed, air-gapped server configurations that secure private narrative scripts."
+    summary: "Transitioning away from public consumer video generations towards closed, air-gapped server configurations that secure private narrative scripts.",
+    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&h=350&q=80"
   }
 ];
 

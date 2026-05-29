@@ -62,4 +62,5 @@ export interface BlogPost {
   readTime: string;
   date: string;
   summary: string;
+  imageUrl?: string;
 }

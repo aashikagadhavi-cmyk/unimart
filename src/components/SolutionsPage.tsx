@@ -123,6 +123,31 @@ export const SolutionsPage: React.FC = () => {
 
         {/* Right Column: Case Studies Highlight */}
         <div className="lg:col-span-5 space-y-6">
+          {/* Active Industry Visual Banner */}
+          <div className="border border-slate-800 rounded-3xl overflow-hidden relative h-48 bg-slate-900 shadow-xl group">
+            <img 
+              src={
+                activeIndustryId === "film-studios"
+                  ? "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80"
+                  : activeIndustryId === "marketing"
+                  ? "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+                  : activeIndustryId === "e-learning"
+                  ? "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+                  : activeIndustryId === "localization"
+                  ? "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=800&q=80"
+                  : "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80"
+              }
+              alt={activeIndustry.name} 
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex items-end p-4">
+              <span className="text-[10px] font-mono text-cyan-400 bg-slate-950/90 border border-slate-800 px-2.5 py-1 rounded font-bold uppercase tracking-wider">
+                Live Deployment Spotlight
+              </span>
+            </div>
+          </div>
+
           <div className="border border-slate-850 bg-slate-905 p-6 rounded-3xl space-y-6">
             <h4 className="text-xs font-mono font-extrabold text-indigo-400 uppercase tracking-wider flex items-center gap-1.5">
               <Icons.Award className="w-4 h-4" />

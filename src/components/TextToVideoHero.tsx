@@ -9,6 +9,7 @@ interface PresetParagraph {
   camera: string;
   narrator: string;
   themeColor: string;
+  imageUrl: string;
 }
 
 export const TextToVideoHero: React.FC = () => {
@@ -21,6 +22,7 @@ export const TextToVideoHero: React.FC = () => {
       camera: "Dynamic Monsoonal Action Pan",
       narrator: "Priya (Warm Commercial Accent)",
       themeColor: "from-fuchsia-500 to-indigo-500",
+      imageUrl: "https://images.unsplash.com/photo-1515621061946-eff1c2a352bd?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: "rome-dawn",
@@ -30,6 +32,7 @@ export const TextToVideoHero: React.FC = () => {
       camera: "Wide Panoramic Crane Zoom",
       narrator: "Marcus (Authoritative Epic Tone)",
       themeColor: "from-amber-500 to-amber-700",
+      imageUrl: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: "martian-port",
@@ -39,6 +42,7 @@ export const TextToVideoHero: React.FC = () => {
       camera: "Steady Low-Angle Elevation Track",
       narrator: "David (Deep Sovereign Vocal)",
       themeColor: "from-orange-500 to-red-600",
+      imageUrl: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: "ring-biometrics",
@@ -48,6 +52,7 @@ export const TextToVideoHero: React.FC = () => {
       camera: "Slow Macroscopic Orbital Rotation",
       narrator: "Sonia (Sleek Luxury Voice)",
       themeColor: "from-cyan-400 to-blue-500",
+      imageUrl: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
     },
   ];
 
@@ -411,6 +416,7 @@ export const TextToVideoHero: React.FC = () => {
                 {/* Cyberpunk Mumbai scene */}
                 {activePresetId === "mumbai-cyber" && (
                   <div className="absolute inset-0 bg-[#06040d] overflow-hidden flex items-center justify-center">
+                    <img src={PRESETS[0].imageUrl} alt="Mumbai Cyberpunk Chase" className="absolute inset-0 w-full h-full object-cover opacity-50 select-none pointer-events-none" referrerPolicy="no-referrer" />
                     {/* Sliding Monsoon light beams */}
                     <div className="absolute inset-0 opacity-40">
                       <div className="absolute w-[1px] h-full bg-indigo-500/70 left-10 transform -rotate-12 animate-pulse" style={{ animationDuration: "1.2s" }}></div>
@@ -425,7 +431,7 @@ export const TextToVideoHero: React.FC = () => {
                     <div className="absolute bottom-16 right-4 bg-cyan-600/10 border border-cyan-400/30 text-cyan-400 text-[6px] font-mono px-1 py-0.5 rounded tracking-widest animate-pulse" style={{ animationDuration: "1.8s" }}></div>
 
                     {/* Vector outline hover bike racing */}
-                    <svg className="w-36 h-20 text-purple-400 overflow-visible mt-2" viewBox="0 0 100 50">
+                    <svg className="w-36 h-20 text-purple-400 overflow-visible mt-2 relative z-10" viewBox="0 0 100 50">
                       <path
                         d="M 10,25 Q 35,10 65,30 T 90,20"
                         fill="none"
@@ -447,12 +453,13 @@ export const TextToVideoHero: React.FC = () => {
                 {/* Ancient Rome Dawn scene */}
                 {activePresetId === "rome-dawn" && (
                   <div className="absolute inset-0 bg-[#0c0906] overflow-hidden flex items-center justify-center">
+                    <img src={PRESETS[1].imageUrl} alt="Ancient Rome dawn Colosseum" className="absolute inset-0 w-full h-full object-cover opacity-50 select-none pointer-events-none" referrerPolicy="no-referrer" />
                     {/* Volumetric Sunburst rotating */}
                     <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-amber-500/20 to-transparent"></div>
                     <div className="absolute w-32 h-32 rounded-full bg-amber-400/10 blur-[30px] -top-10 left-12 animate-pulse"></div>
 
                     {/* Roman Colosseum vector mesh parallax */}
-                    <svg className="w-40 h-24 text-amber-600/60 mt-4 overflow-visible" viewBox="0 0 120 60">
+                    <svg className="w-40 h-24 text-amber-600/60 mt-4 overflow-visible relative z-10" viewBox="0 0 120 60">
                       {/* Background arches */}
                       <path d="M 10,38 H 110 M 15,38 L 15,18 Q 30,8 45,18 L 45,38 M 45,38 L 45,14 Q 60,6 75,14 L 75,38 M 75,38 L 75,18 Q 90,8 105,18 L 105,38" fill="none" stroke="currentColor" strokeWidth="0.75" />
                       {/* Foreground mesh line */}
@@ -466,6 +473,7 @@ export const TextToVideoHero: React.FC = () => {
                 {/* Martian Spaceport Launch scene */}
                 {activePresetId === "martian-port" && (
                   <div className="absolute inset-0 bg-[#0f0402] overflow-hidden flex items-center justify-center">
+                    <img src={PRESETS[2].imageUrl} alt="Martian Spaceport Launch" className="absolute inset-0 w-full h-full object-cover opacity-50 select-none pointer-events-none" referrerPolicy="no-referrer" />
                     {/* Atmosphere moons */}
                     <div className="absolute top-3 left-10 w-4 h-4 rounded-full bg-slate-400/20 border border-slate-500/25"></div>
                     <div className="absolute top-5 left-16 w-1.5 h-1.5 rounded-full bg-amber-500/10"></div>
@@ -478,7 +486,7 @@ export const TextToVideoHero: React.FC = () => {
                     </div>
 
                     {/* Freight starship thruster vector */}
-                    <svg className="w-32 h-20 text-orange-500/80 overflow-visible mt-2" viewBox="0 0 100 50">
+                    <svg className="w-32 h-20 text-orange-500/80 overflow-visible mt-2 relative z-10" viewBox="0 0 100 50">
                       {/* Starship layout outline */}
                       <polygon points="50,10 62,35 38,35" fill="none" stroke="#EA580C" strokeWidth="1.5" />
                       {/* Dynamic hot gas fire emission waves code */}
@@ -503,12 +511,13 @@ export const TextToVideoHero: React.FC = () => {
                 {/* Premium Tech Ring */}
                 {activePresetId === "ring-biometrics" && (
                   <div className="absolute inset-0 bg-[#030712] overflow-hidden flex items-center justify-center">
+                    <img src={PRESETS[3].imageUrl} alt="Premium Tech Smart Ring" className="absolute inset-0 w-full h-full object-cover opacity-50 select-none pointer-events-none" referrerPolicy="no-referrer" />
                     {/* Heatmap overlay */}
                     <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-transparent to-slate-950/60"></div>
                     <div className="absolute w-40 h-40 rounded-full bg-indigo-500/5 border border-indigo-500/10"></div>
 
                     {/* Rotating luxury ring mockup */}
-                    <svg className="w-24 h-24 text-cyan-400 overflow-visible mt-1" viewBox="0 0 100 100">
+                    <svg className="w-24 h-24 text-cyan-400 overflow-visible mt-1 relative z-10" viewBox="0 0 100 100">
                       {/* Orbit laser circle */}
                       <circle cx="50" cy="50" r="30" fill="none" stroke="#2563EB" strokeWidth="0.5" strokeDasharray="5 5" className="animate-spin" style={{ animationDuration: "12s" }} />
                       <ellipse cx="50" cy="50" rx="36" ry="12" fill="none" stroke="#06B6D4" strokeWidth="1.25" className="animate-pulse" />

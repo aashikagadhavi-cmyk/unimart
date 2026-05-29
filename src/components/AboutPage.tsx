@@ -71,12 +71,15 @@ export const AboutPage: React.FC = () => {
 
         <div className="lg:col-span-4 space-y-4 text-center lg:text-left">
           <div className="relative inline-block">
-            {/* Elegant Leader Placeholder Circle */}
-            <div className="w-32 h-32 mx-auto lg:mx-0 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-800 p-0.5 flex items-center justify-center">
-              <div className="w-full h-full bg-slate-950 rounded-2xl flex flex-col items-center justify-center p-3 text-center">
-                <Users className="w-10 h-10 text-blue-400 mb-1" />
-                <span className="text-xs font-mono font-bold text-white">Ratan Kumar</span>
-                <span className="text-[9px] font-mono text-slate-500">Founder & CEO</span>
+            {/* Elegant Leader Profile Image */}
+            <div className="w-32 h-32 mx-auto lg:mx-0 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-800 p-0.5 flex items-center justify-center overflow-hidden">
+              <div className="w-full h-full bg-slate-950 rounded-2xl overflow-hidden relative group">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=300&q=80" 
+                  alt="Ratan Kumar - CEO" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" 
+                  referrerPolicy="no-referrer"
+                />
               </div>
             </div>
             <span className="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-500 to-purple-600 border border-blue-400/40 text-[9px] font-mono font-extrabold px-2 py-0.5 rounded text-white shadow">

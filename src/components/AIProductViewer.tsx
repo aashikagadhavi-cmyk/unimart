@@ -88,23 +88,50 @@ export const AIProductViewer: React.FC<ProductViewerProps> = ({ onSelectDemo }) 
         
         {/* Left segment - Descriptions and Details */}
         <div className="lg:col-span-7 space-y-6">
-          <div>
-            <div className="flex flex-wrap items-center gap-2 mb-3">
-              <span className="text-[10px] font-mono tracking-wider uppercase bg-blue-500/10 text-blue-400 font-bold px-2 py-0.5 rounded border border-blue-400/20">
-                {selectedProduct.category}
-              </span>
-              <span className="text-[10px] font-mono tracking-wider uppercase bg-purple-500/15 text-purple-300 font-bold px-2 py-0.5 rounded">
-                {selectedProduct.badge}
-              </span>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div className="md:col-span-7 space-y-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[10px] font-mono tracking-wider uppercase bg-blue-500/10 text-blue-400 font-bold px-2 py-0.5 rounded border border-blue-400/20">
+                  {selectedProduct.category}
+                </span>
+                <span className="text-[10px] font-mono tracking-wider uppercase bg-purple-500/15 text-purple-300 font-bold px-2 py-0.5 rounded">
+                  {selectedProduct.badge}
+                </span>
+              </div>
+              
+              <h3 className="text-xl md:text-2xl font-extrabold text-white tracking-tight leading-tight">
+                {selectedProduct.name}
+              </h3>
+              
+              <p className="text-xs text-slate-400 leading-relaxed">
+                {selectedProduct.longDescription}
+              </p>
             </div>
-            
-            <h3 className="text-xl md:text-2xl font-extrabold text-white tracking-tight leading-tight">
-              {selectedProduct.name}
-            </h3>
-            
-            <p className="text-xs text-slate-400 leading-relaxed mt-3">
-              {selectedProduct.longDescription}
-            </p>
+
+            {/* Premium Product Teaser Image Card */}
+            <div className="md:col-span-5 h-36 rounded-2xl overflow-hidden border border-slate-850 bg-slate-950 relative shadow-lg group">
+              <img 
+                src={
+                  selectedProduct.id === "ai-video-diffusion"
+                    ? "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=400&q=80"
+                    : selectedProduct.id === "ai-vocal-synthesizer"
+                    ? "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=400&q=80"
+                    : selectedProduct.id === "ai-video-editor"
+                    ? "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&q=80"
+                    : selectedProduct.id === "ai-lip-sync"
+                    ? "https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&w=400&q=80"
+                    : "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
+                }
+                alt={selectedProduct.name} 
+                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent flex items-end p-2.5">
+                <span className="text-[8px] font-mono tracking-widest text-blue-400 font-extrabold uppercase">
+                  Model Preview Still
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Key Product Features list */}
