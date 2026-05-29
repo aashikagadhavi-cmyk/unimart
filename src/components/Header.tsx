@@ -17,14 +17,14 @@ export const Header: React.FC<HeaderProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", action: () => { setView("home"); window.scrollTo({ top: 0, behavior: "smooth" }); } },
-    { label: "AI Products", action: () => { setView("home"); setTimeout(() => document.getElementById("products-section")?.scrollIntoView({ behavior: "smooth" }), 100); } },
-    { label: "Industries", action: () => { setView("home"); setTimeout(() => document.getElementById("industries-section")?.scrollIntoView({ behavior: "smooth" }), 100); } },
-    { label: "Capabilities", action: () => { setView("home"); setTimeout(() => document.getElementById("capabilities-section")?.scrollIntoView({ behavior: "smooth" }), 100); } },
-    { label: "Pricing", action: () => { setView("home"); setTimeout(() => document.getElementById("pricing-section")?.scrollIntoView({ behavior: "smooth" }), 100); } },
-    { label: "About Us", action: () => { setView("home"); setTimeout(() => document.getElementById("about-section")?.scrollIntoView({ behavior: "smooth" }), 100); } },
-    { label: "Resources", action: () => { setView("home"); setTimeout(() => document.getElementById("resources-section")?.scrollIntoView({ behavior: "smooth" }), 100); } },
-    { label: "Contact", action: () => { setView("home"); setTimeout(() => document.getElementById("contact-section")?.scrollIntoView({ behavior: "smooth" }), 100); } },
+    { label: "Home", view: "home" },
+    { label: "About", view: "about" },
+    { label: "Platform", view: "platform" },
+    { label: "Solutions", view: "solutions" },
+    { label: "Technology", view: "technology" },
+    { label: "Developers", view: "developers" },
+    { label: "Pricing", view: "pricing" },
+    { label: "Contact", view: "contact" },
   ];
 
   return (
@@ -56,16 +56,26 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Desktop Main Navigation */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-          {navItems.map((item, index) => (
-            <button
-              key={index}
-              onClick={item.action}
-              id={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-              className="text-sm font-medium text-slate-300 hover:text-blue-400 px-3 py-2 rounded-lg transition-colors cursor-pointer"
-            >
-              {item.label}
-            </button>
-          ))}
+          {navItems.map((item, index) => {
+            const isActive = currentView === item.view;
+            return (
+              <button
+                key={index}
+                onClick={() => {
+                  setView(item.view);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                id={`nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                className={`text-xs font-bold px-3 py-2 rounded-lg transition-all cursor-pointer ${
+                  isActive
+                    ? "text-blue-400 bg-blue-500/10 border border-blue-400/20"
+                    : "text-slate-300 hover:text-blue-450 hover:bg-slate-800/10"
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
         </nav>
 
         {/* Action Controls & Authentication triggers */}
@@ -132,18 +142,26 @@ export const Header: React.FC<HeaderProps> = ({
           id="mobile-nav-panel"
         >
           <div className="grid grid-cols-2 gap-2">
-            {navItems.map((item, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  item.action();
-                  setMobileMenuOpen(false);
-                }}
-                className="text-left py-2.5 px-3 rounded-lg text-sm text-slate-300 hover:text-blue-400 hover:bg-slate-900 transition-all text-ellipsis overflow-hidden whitespace-nowrap"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item, index) => {
+              const isActive = currentView === item.view;
+              return (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setView(item.view);
+                    setMobileMenuOpen(false);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className={`text-left py-2.5 px-3 rounded-lg text-xs transition-all text-ellipsis overflow-hidden whitespace-nowrap ${
+                    isActive
+                      ? "text-blue-400 bg-blue-500/15 font-bold"
+                      : "text-slate-300 hover:text-blue-400 hover:bg-slate-900"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
           </div>
 
           <div className="border-t border-slate-850 pt-4 flex flex-col gap-3">

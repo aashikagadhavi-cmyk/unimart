@@ -6,6 +6,15 @@ import { AIProductViewer } from "./components/AIProductViewer";
 import { SmartChatbot } from "./components/SmartChatbot";
 import { AuthSystem } from "./components/AuthSystem";
 import { DashboardDemo } from "./components/DashboardDemo";
+import { LegalViewer } from "./components/LegalViewer";
+import { PlatformViewer } from "./components/PlatformViewer";
+import { TextToVideoHero } from "./components/TextToVideoHero";
+import { AboutPage } from "./components/AboutPage";
+import { SolutionsPage } from "./components/SolutionsPage";
+import { TechnologyPage } from "./components/TechnologyPage";
+import { DevelopersPage } from "./components/DevelopersPage";
+import { PricingPage } from "./components/PricingPage";
+import { ContactPage } from "./components/ContactPage";
 import { INDUSTRIES, TESTIMONIALS, CASE_STUDIES, BLOG_POSTS, MILESTONES, FAQ_ITEMS } from "./data";
 
 export default function App() {
@@ -19,7 +28,9 @@ export default function App() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterSuccess, setNewsletterSuccess] = useState(false);
   const [selectedIndustryFilter, setSelectedIndustryFilter] = useState<string>("all");
-  const [selectedCalendarSlot, setSelectedCalendarSlot] = useState<string>("");
+  const [selectedCalendarSlot, setSelectedCalendarSlot] = useState<string>("" );
+  const [selectedLegalTab, setSelectedLegalTab] = useState<string>("legal-notice");
+  const [selectedPlatformTab, setSelectedPlatformTab] = useState<string>("video-engine");
 
   // Captured local leads list (interactive simulation storage)
   const [allLeads, setAllLeads] = useState<Array<{ name: string; email: string; product: string }>>([]);
@@ -120,6 +131,34 @@ export default function App() {
           userEmail={userEmail}
           onLogout={handleLogout}
         />
+      ) : currentView === "legal" ? (
+        <LegalViewer 
+          initialTab={selectedLegalTab}
+          onBack={() => {
+            setView("home");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        />
+      ) : currentView === "platform" ? (
+        <PlatformViewer 
+          initialTab={selectedPlatformTab}
+          onBack={() => {
+            setView("home");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        />
+      ) : currentView === "about" ? (
+        <AboutPage />
+      ) : currentView === "solutions" ? (
+        <SolutionsPage />
+      ) : currentView === "technology" ? (
+        <TechnologyPage />
+      ) : currentView === "developers" ? (
+        <DevelopersPage />
+      ) : currentView === "pricing" ? (
+        <PricingPage />
+      ) : currentView === "contact" ? (
+        <ContactPage />
       ) : (
         /* Home Public View */
         <main className="relative overflow-hidden">
@@ -138,19 +177,19 @@ export default function App() {
                 {/* Brand announcement badge */}
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-blue-500/10 via-purple-650/15 to-transparent text-xs font-semibold text-blue-400 rounded-full border border-blue-500/20 shadow-md">
                   <Icons.Sparkles className="w-3.5 h-3.5 text-blue-405 animate-pulse" />
-                  Eunimart AI Orchestrator 2.0 Released
+                  Eunimart VidGen 4.5 Sovereign Model Released
                 </span>
 
                 <div className="space-y-4">
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white">
-                    Transform Your Enterprise with{" "}
+                    Written Paragraph To{" "}
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400">
-                      Generative AI
+                      AI Cinema Video
                     </span>
                   </h1>
                   
                   <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    Eunimart delivers cutting-edge AI platforms for automation, analytics, commerce, and enterprise transformation. Secure, compliant, and robust networks trained for tomorrow's market logistics.
+                    Eunimart delivers a high-fidelity sovereign AI diffusion engine built to synthesize raw paragraph scripts into highly consistent, professional cinematic videos with autonomous camera tracks and emotional vocal narratives.
                   </p>
                 </div>
 
@@ -159,7 +198,7 @@ export default function App() {
                   <button
                     onClick={() => {
                       setView("login");
-                      setRequestedDemoProduct("Enterprise Transformation Suite");
+                      setRequestedDemoProduct("AI Video Engine Suite");
                     }}
                     id="hero-cta-demo"
                     className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-extrabold text-xs text-slate-950 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 hover:opacity-95 shadow-lg shadow-purple-500/10 hover:shadow-cyan-500/20 transition-all cursor-pointer flex items-center justify-center gap-2"
@@ -180,96 +219,24 @@ export default function App() {
                 {/* Mini Trust Stats */}
                 <div className="pt-6 border-t border-slate-900 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 text-left">
                   <div>
-                    <h3 className="text-xl font-extrabold text-white font-mono">10B+</h3>
-                    <p className="text-[10px] text-slate-500 font-mono">Monthly Tokens Processed</p>
+                    <h3 className="text-xl font-extrabold text-white font-mono">3.5M+</h3>
+                    <p className="text-[10px] text-slate-500 font-mono">Cinematic Videos Rendered</p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-extrabold text-white font-mono">34%</h3>
-                    <p className="text-[10px] text-slate-500 font-mono">Checkout Conversion Lift</p>
+                    <h3 className="text-xl font-extrabold text-white font-mono">12.5x</h3>
+                    <p className="text-[10px] text-slate-500 font-mono">Production Cost reduction</p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-extrabold text-white font-mono">SOC2</h3>
-                    <p className="text-[10px] text-slate-500 font-mono">Enterprise Grade Vetted</p>
+                    <h3 className="text-xl font-extrabold text-white font-mono">99.8%</h3>
+                    <p className="text-[10px] text-slate-500 font-mono">Sovereign Physics Sync</p>
                   </div>
                 </div>
 
               </div>
 
-              {/* Right Column visual simulation console */}
-              <div className="lg:col-span-5 relative">
-                
-                {/* Visual Brain simulation box */}
-                <div className="relative rounded-3xl overflow-hidden bg-slate-950/45 border border-slate-800 p-6 flex flex-col justify-between min-h-[380px] shadow-2xl">
-                  
-                  {/* Decorative background grid */}
-                  <div className="absolute inset-0 bg-[#0c1220]/80 z-0"></div>
-                  
-                  {/* Vector AI Brain Grid map */}
-                  <div className="relative z-10 flex-1 flex flex-col justify-center items-center py-6">
-                    <svg className="w-44 h-44 text-blue-500/35 overflow-visible" viewBox="0 0 100 100" id="hero-vector-brain">
-                      {/* Connection mesh */}
-                      <path d="M 10,20 L 50,10 L 90,20 L 90,80 L 50,90 L 10,80 Z" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3"/>
-                      <line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" strokeWidth="0.5" />
-                      <line x1="10" y1="80" x2="90" y2="20" stroke="currentColor" strokeWidth="0.5" />
-                      <line x1="10" y1="20" x2="90" y2="80" stroke="currentColor" strokeWidth="0.5" />
-                      
-                      {/* Pulsing Core dots */}
-                      <circle cx="50" cy="50" r="15" fill="none" stroke="#7C3AED" strokeWidth="1" className="animate-ping" />
-                      <circle cx="50" cy="50" r="6" fill="#2563EB" />
-                      <circle cx="10" cy="20" r="3" fill="#06B6D4" />
-                      <circle cx="90" cy="20" r="3" fill="#06B6D4" />
-                      <circle cx="90" cy="80" r="3" fill="#7C3AED" />
-                      <circle cx="10" cy="80" r="3" fill="#7C3AED" />
-                      <circle cx="50" cy="10" r="3.5" fill="#2563EB" />
-                      <circle cx="50" cy="90" r="3.5" fill="#2563EB" />
-
-                      {/* Text floating nodes */}
-                      <text x="50" y="42" fill="#a7f3d0" fontSize="5" fontFamily="monospace" textAnchor="middle">COGNITIVE ENGINE</text>
-                      <text x="18" y="27" fill="#93c5fd" fontSize="4.5" fontFamily="monospace">COM-1</text>
-                      <text x="75" y="77" fill="#c084fc" fontSize="4.5" fontFamily="monospace">LOG-09</text>
-                    </svg>
-
-                    <p className="text-xs font-mono text-slate-400 mt-4 uppercase tracking-widest text-center">
-                      AI TRANSACTION ENVELOPE ACTIVATED
-                    </p>
-                  </div>
-
-                  {/* Terminal monitor panel */}
-                  <div className="relative z-10 bg-slate-950 p-3 rounded-xl border border-slate-850 space-y-1.5 font-mono text-[9px] text-slate-350">
-                    <div className="flex justify-between border-b border-indigo-950 pb-1 text-[8px] text-slate-500">
-                      <span>SECURE PIPELINE MONITOR</span>
-                      <span className="text-teal-400">STATUS: REPAIR SAFE</span>
-                    </div>
-                    <div className="space-y-0.5">
-                      <p><span className="text-blue-400">&gt;</span> [Handshake] Connected to Mumbai Core BOM-1</p>
-                      <p><span className="text-blue-400">&gt;</span> Loading LLM cognitive mapping ruleset...</p>
-                      <p className="text-emerald-400"><span className="text-blue-400">&gt;</span> Node initialized successfully. Standard SOC-2 armed.</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Widget 1: Commerce Growth */}
-                <div className="absolute -top-6 -right-6 bg-slate-900/90 border border-slate-800 p-3 rounded-2xl flex items-center gap-3 shadow-xl max-w-[190px]">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
-                    <Icons.TrendingUp className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-extrabold text-white">Dynamic Pricing</h4>
-                    <p className="text-[10px] text-emerald-400 font-mono font-bold">+18.4% Revenue delta</p>
-                  </div>
-                </div>
-
-                {/* Floating Widget 2: Security Validation */}
-                <div className="absolute -bottom-6 -left-6 bg-slate-900/90 border border-slate-800 p-3 rounded-2xl flex items-center gap-3 shadow-xl max-w-[180px]">
-                  <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-450">
-                    <Icons.Shield className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-extrabold text-white">SOC-2 Shield</h4>
-                    <p className="text-[10px] text-slate-400 font-mono">Air-gapped security</p>
-                  </div>
-                </div>
-
+              {/* Right Column visual text-to-video studio component */}
+              <div className="lg:col-span-5 relative z-10">
+                <TextToVideoHero />
               </div>
 
             </div>
@@ -1091,7 +1058,7 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="bg-slate-950 border-t border-slate-900 text-slate-400 py-12 px-4 sm:px-6 lg:px-8" id="footer-section">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-8">
           
           <div className="space-y-4">
             <div className="flex items-center gap-2">
@@ -1108,6 +1075,84 @@ export default function App() {
               ratankumar@eunimart.in
               Mumbai, Maharashtra, India
             </div>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-mono font-bold text-white uppercase mb-4 tracking-wider">PLATFORM</h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedPlatformTab("video-engine");
+                    setView("platform");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  AI Video Engine
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedPlatformTab("voice-engine");
+                    setView("platform");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  AI Voice Engine
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedPlatformTab("generative-ai");
+                    setView("platform");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  Generative AI
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedPlatformTab("video-editor");
+                    setView("platform");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  AI Video Editor
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedPlatformTab("language-dubbing");
+                    setView("platform");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  Multi-Language Dubbing
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedPlatformTab("content-generator");
+                    setView("platform");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  Content Generator
+                </button>
+              </li>
+            </ul>
           </div>
 
           <div>
@@ -1129,6 +1174,84 @@ export default function App() {
               <li><a href="#industries-section" className="hover:text-slate-200">Compliant Healthcare</a></li>
               <li><a href="#industries-section" className="hover:text-slate-200">Fintech Payment Scopes</a></li>
               <li><a href="#industries-section" className="hover:text-slate-200">Modern Digital Startups</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-mono font-bold text-white uppercase mb-4 tracking-wider">Legal Transparency</h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedLegalTab("legal-notice");
+                    setView("legal");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  Legal Notice
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedLegalTab("privacy-policy");
+                    setView("legal");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedLegalTab("terms-conditions");
+                    setView("legal");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  Terms &amp; Conditions
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedLegalTab("disclaimer");
+                    setView("legal");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  Disclaimer
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedLegalTab("cookie-policy");
+                    setView("legal");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  Cookie Policy
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setSelectedLegalTab("acceptable-use");
+                    setView("legal");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="hover:text-slate-200 text-left transition-colors cursor-pointer"
+                >
+                  Acceptable Use Policy
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -1166,12 +1289,72 @@ export default function App() {
 
         <div className="max-w-7xl mx-auto border-t border-slate-900 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-600 font-mono">
           <p>Copyright &copy; 2026 Eunimart Private Limited. All Rights Reserved.</p>
-          <div className="flex gap-4">
-            <span className="hover:text-slate-400 cursor-pointer">Privacy Policy</span>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center sm:justify-end">
+            <button
+              onClick={() => {
+                setSelectedLegalTab("legal-notice");
+                setView("legal");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="hover:text-slate-400 cursor-pointer transition-colors"
+            >
+              Legal Notice
+            </button>
             <span>&middot;</span>
-            <span className="hover:text-slate-400 cursor-pointer">Terms &amp; Conditions</span>
+            <button
+              onClick={() => {
+                setSelectedLegalTab("privacy-policy");
+                setView("legal");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="hover:text-slate-400 cursor-pointer transition-colors"
+            >
+              Privacy Policy
+            </button>
             <span>&middot;</span>
-            <span className="hover:text-slate-400 cursor-pointer">Sovereign Air-Gap API Docs</span>
+            <button
+              onClick={() => {
+                setSelectedLegalTab("terms-conditions");
+                setView("legal");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="hover:text-slate-400 cursor-pointer transition-colors"
+            >
+              Terms &amp; Conditions
+            </button>
+            <span>&middot;</span>
+            <button
+              onClick={() => {
+                setSelectedLegalTab("disclaimer");
+                setView("legal");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="hover:text-slate-400 cursor-pointer transition-colors"
+            >
+              Disclaimer
+            </button>
+            <span>&middot;</span>
+            <button
+              onClick={() => {
+                setSelectedLegalTab("cookie-policy");
+                setView("legal");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="hover:text-slate-400 cursor-pointer transition-colors"
+            >
+              Cookie Policy
+            </button>
+            <span>&middot;</span>
+            <button
+              onClick={() => {
+                setSelectedLegalTab("acceptable-use");
+                setView("legal");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="hover:text-slate-400 cursor-pointer transition-colors"
+            >
+              Acceptable Use Policy
+            </button>
           </div>
         </div>
       </footer>

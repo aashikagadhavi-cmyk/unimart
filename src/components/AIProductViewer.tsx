@@ -8,7 +8,7 @@ interface ProductViewerProps {
 }
 
 export const AIProductViewer: React.FC<ProductViewerProps> = ({ onSelectDemo }) => {
-  const [selectedProductId, setSelectedProductId] = useState<string>("ai-commerce");
+  const [selectedProductId, setSelectedProductId] = useState<string>("ai-video-diffusion");
   const [copiedIndex, setCopiedIndex] = useState<boolean>(false);
   const [apiMockOutput, setApiMockOutput] = useState<string>("");
   const [testingApi, setTestingApi] = useState<boolean>(false);
